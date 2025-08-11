@@ -1,62 +1,357 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criação de Sites - Profissionais e Responsivos</title>
-    <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Criação de sites modernos e responsivos. Transforme suas ideias em realidade digital. Peça um orçamento agora!">
-    <meta name="author" content="Sua Empresa">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Landing Page</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Swiper.js CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <style>
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .swiper-slide:hover img {
+      transform: scale(1.05);
+    }
+    .banner-swiper {
+      max-width: 100%;
+      height: 500px;
+    }
+    .projects-swiper {
+      max-width: 100%;
+      height: 400px;
+    }
+    .comic-effect {
+      border: 4px solid black;
+      box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2);
+      transform: rotate(-2deg);
+    }
+    .comic-effect:nth-child(even) {
+      transform: rotate(2deg);
+    }
+    @media (max-width: 640px) {
+      .banner-swiper {
+        height: 300px;
+      }
+      .projects-swiper {
+        height: 250px;
+      }
+    }
+    .smooth-transition {
+      transition: all 0.3s ease-in-out;
+    }
+    button:hover, a:hover {
+      transform: translateY(-2px);
+    }
+    .form-input:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #1e40af;
+    }
+    .mobile-menu {
+      transition: max-height 0.3s ease-in-out;
+    }
+    .banner-swiper {
+  max-width: 100%;
+  height: 250px; /* Altura para mobile */
+}
+
+@media (min-width: 640px) {
+  .banner-swiper {
+    height: 400px; /* Altura para tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner-swiper {
+    height: 500px; /* Altura para desktops */
+  }
+}
+  </style>
 </head>
-<body>
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Sites que Convertem Visitantes em Clientes</h1>
-            <p>Modernos, rápidos e sob medida para o seu negócio.</p>
-            <a href="#contato" class="cta-button" onclick="openWhatsApp('5516993793808', '')" class="btn">Orçamento</a>
+<body class="font-sans bg-gray-900 text-gray-200">
+  <!-- Cabeçalho -->
+  <header class="bg-black text-gray-200 sticky top-0 z-50 shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <a href="#home">
+        <img src="Orbtech Logo.png" alt="Minha Marca" class="h-12">
+      </a>
+      <button id="mobile-menu-btn" class="sm:hidden text-gray-200 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <ul id="nav-menu" class="hidden sm:flex sm:space-x-6">
+        <li><a href="#home" class="hover:text-blue-400 smooth-transition">Home</a></li>
+        <li><a href="#sobre" class="hover:text-blue-400 smooth-transition">Sobre</a></li>
+        <li><a href="#beneficios" class="hover:text-blue-400 smooth-transition">Benefícios</a></li>
+        <li><a href="#projetos" class="hover:text-blue-400 smooth-transition">Projetos</a></li>
+        <li><a href="#contato" class="hover:text-blue-400 smooth-transition">Contato</a></li>
+      </ul>
+      <ul id="mobile-nav-menu" class="hidden flex-col space-y-2 w-full absolute left-0 top-16 bg-black p-4 sm:hidden mobile-menu">
+        <li><a href="#home" class="hover:text-blue-400 smooth-transition">Home</a></li>
+        <li><a href="#sobre" class="hover:text-blue-400 smooth-transition">Sobre</a></li>
+        <li><a href="#beneficios" class="hover:text-blue-400 smooth-transition">Benefícios</a></li>
+        <li><a href="#projetos" class="hover:text-blue-400 smooth-transition">Projetos</a></li>
+        <li><a href="#contato" class="hover:text-blue-400 smooth-transition">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner Carrossel -->
+ <!-- Banner Carrossel -->
+<section id="home" class="py-8">
+  <div class="banner-swiper swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide relative">
+          <img src="b1.png" alt="Banner 1" class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-10 smooth-transition hover:bg-opacity-10">
+
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide relative">
+          <img src="b2.png" alt="Banner 2" class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105">
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-10 smooth-transition hover:bg-opacity-10">
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide relative">
+          <img src="b3.png" alt="Banner 3" class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-0">
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-10 smooth-transition hover:bg-opacity-10">
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+ <!-- Seção Benefícios/Diferenciais -->
+  <section id="beneficios" class="py-16 bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center text-gray-200 mb-8">Nossos Diferenciais</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl smooth-transition text-center">
+          <h3 class="text-xl font-semibold text-blue-400 mb-4">Desenvolvimento Personalizado</h3>
+          <p class="text-gray-400">Sistemas robustos e escaláveis, focados em performance e experiência do usuário.</p>
         </div>
-    </div>
-
-    <!-- Serviços -->
-    <div class="services">
-        <h2>O Que Oferecemos</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <img src="icons8-responsive-100.png" alt="Sites Responsivos">
-                <h3>Responsividade</h3>
-                <p>Sites que se adaptam a todos os dispositivos.</p>
-            </div>
-            <div class="service-item">
-                <img src="icons8-speed-100.png" alt="Velocidade">
-                <h3>Velocidade</h3>
-                <p>Carregamento otimizado para melhores resultados.</p>
-            </div>
-            <div class="service-item">
-                <img src="icons8-custom-100.png" alt="Personalização">
-                <h3>Personalização</h3>
-                <p>Designs únicos feitos para o seu negócio.</p>
-            </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl smooth-transition text-center">
+          <h3 class="text-xl font-semibold text-blue-400 mb-4">Atendimento Personalizado</h3>
+          <p class="text-gray-400">Soluções sob medida, pensadas para suas necessidades específicas.</p>
         </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl smooth-transition text-center">
+          <h3 class="text-xl font-semibold text-blue-400 mb-4">Suporte Tecnico</h3>
+          <p class="text-gray-400">Suporte especializado, disponível para transformar suas ideias em realidade.</p>
+        </div>
+      </div>
     </div>
+  </section>
+  <!-- Seção Sobre -->
+  <section id="sobre" class="py-16 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center text-gray-200 mb-8">Sobre Meu Trabalho</h2>
+      <p class="text-lg text-gray-400 text-center max-w-3xl mx-auto leading-relaxed">
+Oferece soluções personalizadas de hospedagem e desenvolvimento de sistemas com suporte técnico dedicado. Estamos prontos para transformar suas ideias em soluções digitais que impulsionam o crescimento do seu negócio.      </p>
+    </div>
+  </section>
 
-    <!-- Contato -->
-    <div class="contact" id="contato">
-        <h2>Entre em Contato</h2>
-        <p>Pronto para transformar sua ideia em um site incrível? Fale conosco agora!</p>
-        <a href="#contato" class="cta-button" onclick="openWhatsApp('5516993793808', '')" class="btn">Fale pelo whatsApp</a>
+  <!-- Seção Projetos (Carrossel em Estilo Quadrinhos) -->
+  <section id="projetos" class="py-16 bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center text-gray-200 mb-8">Nossos Projetos</h2>
+      <div class="projects-swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="2.png" alt="Projeto 1" class="comic-effect">
+          </div>
+          <div class="swiper-slide">
+            <img src="3.png" alt="Projeto 2" class="comic-effect">
+          </div>
+          <div class="swiper-slide">
+            <img src="4.png" alt="Projeto 3" class="comic-effect">
+          </div>
+          <div class="swiper-slide">
+            <img src="5.png" alt="Projeto 4" class="comic-effect">
+          </div>
+          <div class="swiper-slide">
+            <img src="6.png" alt="Projeto 5" class="comic-effect">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
+  </section>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2024 Orbtech!. Todos os direitos reservados. | <a href="thales275966@outlook.com">Envie-nos um e-mail</a></p>
+  <!-- Formulário de Contato -->
+ <section id="contact" class="py-16 bg-gradient-to-b from-gray-900 to-gray-800">
+<section id="contact" class="py-16 bg-gradient-to-b from-gray-900 to-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-extrabold text-center text-white mb-12">Contato</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Formulário de Contato -->
+      <div class="max-w-lg mx-auto w-full">
+        <form action="mailto:claudineidiesel@outlook.com" method="post" id="contact-form" class="space-y-6" aria-labelledby="contact-heading">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-200">Nome</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="mt-2 p-4 w-full border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
+              placeholder="Digite seu nome"
+              aria-required="true"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-200">E-mail</-WHATSAPP no lugar do mapa -->
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="mt-2 p-4 w-full border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
+              placeholder="Digite seu e-mail"
+              aria-required="true"
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-200">Mensagem</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="5"
+              class="mt-2 p-4 w-full border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
+              placeholder="Escreva sua mensagem"
+              aria-required="true"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition duration-200 shadow-md"
+          >
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
+      <!-- Endereço e WhatsApp -->
+      <div class="space-y-6 text-center lg:text-left">
+        <h3 class="text-2xl font-semibold text-white mb-4">Nosso WhatsApp</h3>
+        <p class="text-gray-300"></p>
+        <a
+          href="https://wa.me/5516999733035?text=Ol%C3%A1%!%20Gostaria%20de%20entrar%20em%20contato."
+          target="_blank"
+          class="inline-block bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 transition duration-200 shadow-md"
+          aria-label="Entrar em contato pelo WhatsApp"
+        >
+          Fale conosco pelo WhatsApp
+        </a>
+      </div>
     </div>
-    <script>
-        function openWhatsApp(phoneNumber, basketName) {
-            const url = `https://wa.me/${phoneNumber}?text=Olá, gostaria de informações sobre o site ${encodeURIComponent(basketName)}.`;
-            window.open(url, '_blank');
-        }
-    </script>
+  </div>
+</section>
+</section>
+
+  <!-- Rodapé -->
+  <footer class="bg-black text-gray-200 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-center md:text-left">
+          <img src="Orbtech Logo.png" alt="Minha Marca" class="h-10 mx-auto md:mx-0">
+          <p class="text-sm mt-2">© 2025 Todos os direitos reservados.</p>
+        </div>
+        <div class="mt-6 md:mt-0">
+          <h3 class="text-lg font-semibold text-center md:text-left">Siga-nos</h3>
+          <div class="flex justify-center md:justify-start space-x-6 mt-2">
+            <a href="#" class="hover:text-blue-400 smooth-transition"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.3 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.06 1.366-.325 2.633-1.3 3.608-.975.975-2.242 1.24-3.608 1.3-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.06-2.633-.325-3.608-1.3-.975-.975-1.24-2.242-1.3-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.06-1.366.325-2.633 1.3-3.608.975-.975 2.242-1.24 3.608-1.3C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.775.131 4.602.387 3.545 1.444 2.488 2.501 2.232 3.674 2.173 4.951.013 8.332 0 8.741 0 12c0 3.259.013 3.668.072 4.948.059 1.277.315 2.45 1.372 3.507 1.057 1.057 2.23 1.313 3.507 1.372C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.277-.059 2.45-.315 3.507-1.372 1.057-1.057 1.313-2.23 1.372-3.507.059-1.28.072-1.689.072-4.948s-.013-3.668-.072-4.948c-.059-1.277-.315-2.45-1.372-3.507C19.398.387 18.225.131 16.948.072 15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            <a href="#" class="hover:text-blue-400 smooth-transition"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg></a>
+            <a href="#" class="hover:text-blue-400 smooth-transition"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.5 10.3h-3v-5.6c0-1.3-.5-2.2-1.7-2.2-1 0-1.5.7-1.7 1.4v6.4h-3v-9h3v1.2c.4-.8 1.2-1.4 2.2-1.4 1.6 0 2.8 1.1 2.8 3.5v5.7z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript para carrosséis e menu responsivo -->
+  <script>
+    // Inicializar o carrossel de banners
+    const bannerSwiper = new Swiper('.banner-swiper', {
+      loop: true,
+      pagination: {
+        el: '.banner-swiper .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.banner-swiper .swiper-button-next',
+        prevEl: '.banner-swiper .swiper-button-prev',
+      },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+      },
+    });
+
+    // Inicializar o carrossel de projetos
+    const projectsSwiper = new Swiper('.projects-swiper', {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: '.projects-swiper .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.projects-swiper .swiper-button-next',
+        prevEl: '.projects-swiper .swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+
+    // Menu hamburguer para mobile
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNavMenu = document.getElementById('mobile-nav-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNavMenu.classList.toggle('hidden');
+    });
+
+    // Manipulação do formulário
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const button = this.querySelector('button');
+      button.textContent = 'Enviando...';
+      button.disabled = true;
+      setTimeout(() => {
+        alert('Mensagem enviada com sucesso!');
+        button.textContent = 'Enviar Mensagem';
+        button.disabled = false;
+        this.reset();
+      }, 1000);
+    });
+  </script>
 </body>
 </html>
